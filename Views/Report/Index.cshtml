@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@model IEnumerable<ReportModel>
+
+<section class="report-wrapper">
+    <form asp-action="GetReportBySearch" method="post" class="report-filter-wrapper">
+        <label for="report-filter">Pesquisar</label>
+        <div class="report-filter-input-wrapper">
+            <input type="text" class="form-control report-input" name="search"
+                placeholder="Titulo, equisador, vulnerabilidade">
+            
+            <select name="severity" class="form-select severity" onchange="this.form.submit()">
+                <option value="Critical">Critical</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+                <option value="Informative">Informative</option>
+            </select>
+        </div>
+    </form>
+
+    <div class="show-report-wrapper">
+        @if (Model.Count() < 1)
+        {
+            <div class="report-card">
+                <div class="report-img">
+                    <img class="card-img-top profile-report" src="~/img/bug.png" alt=""
+                         data-report-id="">
+                </div>
+                <div class="card-body">
+                    <h4 class="report-title">Nenhum Relatorio encontrado X-X</h4>
+                    <span class="report-desc">
+                        Infelizmente nao encontramos nenhum relatorio com essa descricao no sistema.
+                    </span>
+                    <div class="report-info">
+                        <div>
+                            <a href="{{route('site.profile.profile')}}" class="nav-link report-user-name"><i class="fa-solid fa-arrow-left"></i></a>
+                            <span class="report-user">
+                                Mantenha a calma e tente novamente.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        } else
+        {
+
+            @foreach (var report in Model)
+            {
+                <div class="report-card">
+                    <div class="report-img">
+                        <img class="card-img-top profile-report" src="~/img/bug.png" alt=""
+                             data-report-id="@report.Id">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="report-title">@report.Title</h4>
+                        <span class="report-desc">
+                            @report.Description
+                        </span>
+                        <div class="report-info">
+                            <div>
+                                <span class="report-user">
+                                    Reportado por:
+                                </span>
+                                <a href="{{route('site.profile.profile')}}" class="nav-link report-user-name">@report.User</a>
+                            </div>
+                            <span class="report-severity">@report.Severity<span class="severity-icon"></span></span>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+    <div class="paginate">
+        <nav>
+            <ul class="pagination">
+                @if (ViewBag.CurrentPage > 1)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="?page=@(ViewBag.CurrentPage - 1)">Anterior</a>
+                    </li>
+                }
+
+                @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                {
+                    <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                        <a class="page-link" href="?page=@i">@i</a>
+                    </li>
+                }
+
+                @if (ViewBag.CurrentPage < ViewBag.TotalPages)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="?page=@(ViewBag.CurrentPage + 1)">Próximo</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    </div>
+</section>

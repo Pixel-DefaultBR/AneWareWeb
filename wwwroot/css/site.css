@@ -1,0 +1,72 @@
+:root {
+    /*Cores principais do projeto*/
+    --purple-light: #F9F0FE;
+    --purple-light-houver: #F5E9FE;
+    --purple-light-active: #F9F0FE;
+    --purple-normal: #BE6BF5;
+    --purple-normal-houver: #AB60DD;
+    --purple-normal-active: #9856C4;
+    --purple-dark: #8F50B8;
+    /*Cores de status / gravidade*/
+    --status-infomative: #0076A8;
+    --status-low: #63BB8D;
+    --status-medium: #FFE97A;
+    --status-high: #FFC64D;
+    --status-critical: #FF4D4D;
+    /*Cores globais*/
+    --white: #FFFFFF;
+    --black: #000000;
+    --background-color-dark: #323232;
+    --backgorund-color-light: #FFFFFF;
+    /*Tamanho de fontes*/
+    --h1-display: 68px;
+    --h2-large-title: 40px;
+    --h3-title: 28px;
+    --h4-subtitle: 24px;
+    --h5-body-large: 20px;
+    --h6-body: 14px;
+}
+
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+  
+}
+
+.btn {
+    font-weight: bold;
+    height: 56px;
+    width: 175px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn:hover {
+    background-color: var(--purple-normal-houver);
+    color: var(--backgorund-color-light);
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    overflow-x: hidden;
+}
+
+footer { 
+    padding: 20px
+}

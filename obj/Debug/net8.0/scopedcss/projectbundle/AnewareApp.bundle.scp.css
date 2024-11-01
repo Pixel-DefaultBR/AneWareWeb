@@ -1,0 +1,84 @@
+/* _content/AnewareApp/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+:root[b-s5xboxcnaa] {
+    /*Cores principais do projeto*/
+    --purple-light: #F9F0FE;
+    --purple-light-houver: #F5E9FE;
+    --purple-light-active: #F9F0FE;
+    --purple-normal: #BE6BF5;
+    --purple-normal-houver: #AB60DD;
+    --purple-normal-active: #9856C4;
+    --purple-dark: #8F50B8;
+    /*Cores de status / gravidade*/
+    --status-infomative: #0076A8;
+    --status-low: #63BB8D;
+    --status-medium: #FFE97A;
+    --status-high: #FFC64D;
+    --status-critical: #FF4D4D;
+    /*Cores globais*/
+    --white: #FFFFFF;
+    --black: #000000;
+    --background-color-dark: #323232;
+    --backgorund-color-light: #FFFFFF;
+    /*Tamanho de fontes*/
+    --h1-display: 68px;
+    --h2-large-title: 40px;
+    --h3-title: 28px;
+    --h4-subtitle: 24px;
+    --h5-body-large: 20px;
+    --h6-body: 14px;
+    --pf-any: 12px
+}
+
+
+a.navbar-brand[b-s5xboxcnaa] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-s5xboxcnaa] {
+  color: #0077cc;
+}
+
+a > span[b-s5xboxcnaa] {
+    color: var(--purple-normal);
+}
+
+.btn-primary[b-s5xboxcnaa] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-s5xboxcnaa], .nav-pills .show > .nav-link[b-s5xboxcnaa] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-s5xboxcnaa] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-s5xboxcnaa] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-s5xboxcnaa] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-s5xboxcnaa] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-s5xboxcnaa] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
